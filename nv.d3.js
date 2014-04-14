@@ -3392,7 +3392,7 @@ nv.models.discreteBar = function() {
           .style('fill-opacity', 1e-6)
           .remove();
       groups
-          .attr('class', function(d,i) { return 'nv-group nv-series-' + i })
+          .attr('class', function(d,i) { return 'nv-group nv-series-' + i + ((d.class) ? ' ' + d.class:'') })
           .classed('hover', function(d) { return d.hover });
       groups
           .transition()
@@ -5288,7 +5288,7 @@ nv.models.line = function() {
           .style('fill-opacity', 1e-6)
           .remove();
       groups
-          .attr('class', function(d,i) { return 'nv-group nv-series-' + i })
+          .attr('class', function(d,i) { return 'nv-group nv-series-' + i + ((d.class) ? ' ' + d.class:'') })
           .classed('hover', function(d) { return d.hover })
           .style('fill', function(d,i){ return color(d, i) })
           .style('stroke', function(d,i){ return color(d, i)});
@@ -7873,7 +7873,7 @@ nv.models.multiBar = function() {
           .attr('height', 0)
           .remove();
       groups
-          .attr('class', function(d,i) { return 'nv-group nv-series-' + i })
+          .attr('class', function(d,i) { return 'nv-group nv-series-' + i + (d.class) ? ' ' + d.class : ''; })
           .classed('hover', function(d) { return d.hover })
           .style('fill', function(d,i){ return color(d, i) })
           .style('stroke', function(d,i){ return color(d, i) });
@@ -8950,7 +8950,7 @@ nv.models.multiBarHorizontal = function() {
           .style('fill-opacity', 1e-6)
           .remove();
       groups
-          .attr('class', function(d,i) { return 'nv-group nv-series-' + i })
+          .attr('class', function(d,i) { return 'nv-group nv-series-' + i + ((d.class) ? ' ' + d.class:'') })
           .classed('hover', function(d) { return d.hover })
           .style('fill', function(d,i){ return color(d, i) })
           .style('stroke', function(d,i){ return color(d, i) });
@@ -11538,7 +11538,7 @@ nv.models.scatter = function() {
       groups.exit()
           .remove();
       groups
-          .attr('class', function(d,i) { return 'nv-group nv-series-' + i })
+          .attr('class', function(d,i) { return 'nv-group nv-series-' + i + ((d.class) ? ' ' + d.class:'') })
           .classed('hover', function(d) { return d.hover });
       groups
           .transition()
