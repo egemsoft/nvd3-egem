@@ -2555,7 +2555,8 @@ nv.models.cumulativeLineChart = function() {
     var left = e.pos[0] + ( offsetElement.offsetLeft || 0 ),
         top = e.pos[1] + ( offsetElement.offsetTop || 0),
         x = xAxis.tickFormat()(lines.x()(e.point, e.pointIndex)),
-        y = yAxis.tickFormat()(lines.y()(e.point, e.pointIndex)),
+        // Addition by Egemsoft: tick formatter second param to inform it is a tooltip call
+        y = yAxis.tickFormat()(lines.y()(e.point, e.pointIndex), 'tooltip'),
         content = tooltip(e.series.key, x, y, e, chart);
 
     nv.tooltip.show([left, top], content, null, null, offsetElement);
@@ -3020,7 +3021,8 @@ nv.models.cumulativeLineChart = function() {
                   .chartContainer(that.parentNode)
                   .enabled(tooltips)
                   .valueFormatter(function(d,i) {
-                     return yAxis.tickFormat()(d);
+                    // Addition by Egemsoft: tick formatter second param to inform it is a tooltip call
+                    return yAxis.tickFormat()(d, 'tooltip');
                   })
                   .data(
                       {
@@ -5555,7 +5557,8 @@ nv.models.lineChart = function() {
     var left = e.pos[0] + ( offsetElement.offsetLeft || 0 ),
         top = e.pos[1] + ( offsetElement.offsetTop || 0),
         x = xAxis.tickFormat()(lines.x()(e.point, e.pointIndex)),
-        y = yAxis.tickFormat()(lines.y()(e.point, e.pointIndex)),
+        // Addition by Egemsoft: tick formatter second param to inform it is a tooltip call
+        y = yAxis.tickFormat()(lines.y()(e.point, e.pointIndex), true),
         content = tooltip(e.series.key, x, y, e, chart);
 
     nv.tooltip.show([left, top], content, null, null, offsetElement);
@@ -5789,7 +5792,8 @@ nv.models.lineChart = function() {
                   .chartContainer(that.parentNode)
                   .enabled(tooltips)
                   .valueFormatter(function(d,i) {
-                     return yAxis.tickFormat()(d);
+                    // Addition by Egemsoft: tick formatter second param to inform it is a tooltip call
+                    return yAxis.tickFormat()(d, 'tooltip');
                   })
                   .data(
                       {
@@ -6501,7 +6505,8 @@ nv.models.lineWithFocusChart = function() {
     var left = e.pos[0] + ( offsetElement.offsetLeft || 0 ),
         top = e.pos[1] + ( offsetElement.offsetTop || 0),
         x = xAxis.tickFormat()(lines.x()(e.point, e.pointIndex)),
-        y = yAxis.tickFormat()(lines.y()(e.point, e.pointIndex)),
+        // Addition by Egemsoft: tick formatter second param to inform it is a tooltip call
+        y = yAxis.tickFormat()(lines.y()(e.point, e.pointIndex), true),
         content = tooltip(e.series.key, x, y, e, chart);
 
     nv.tooltip.show([left, top], content, null, null, offsetElement);
@@ -14367,7 +14372,8 @@ nv.models.stackedAreaChart = function() {
           //If we are in 'expand' mode, force the format to be a percentage.
           var valueFormatter = (stacked.style() == 'expand') ? 
                function(d,i) {return d3.format(".1%")(d);} :
-               function(d,i) {return yAxis.tickFormat()(d); };
+               // Addition by Egemsoft: tick formatter second param to inform it is a tooltip call
+               function(d,i) {return yAxis.tickFormat()(d, 'tooltip'); };
           interactiveLayer.tooltip
                   .position({left: pointXLocation + margin.left, top: e.mouseY + margin.top})
                   .chartContainer(that.parentNode)
