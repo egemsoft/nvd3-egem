@@ -56,7 +56,7 @@ This styles will hide path of the serie and show bigger points.
 
 
 #License
-Added codes by Egemsoft is licensed under MIT license. Nvd3 and d3.js licenses are added below.
+Added codes by Egemsoft are licensed under MIT license. Nvd3 and d3.js licenses are added below.
 
 ##nvd3.js License
 
