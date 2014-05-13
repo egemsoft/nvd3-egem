@@ -1,7 +1,7 @@
 nvd3-egem
 ---------
 
-Egem fork of nvd3. Extended functionalities over nvd3.
+Egem fork of nvd3. Extended functionalities over [nvd3](http://nvd3.org). Based on nvd3 1.1.14-beta.
 
 ![logo](http://egemsoft.net/images/logo.png)
 
