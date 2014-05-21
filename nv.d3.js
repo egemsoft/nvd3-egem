@@ -8043,7 +8043,7 @@ nv.models.multiBar = function() {
                     for (var key in barsLabels) {
                         for (var i in barsLabels[key]) {
                             group.append('text').transition()
-                                .attr("class", "osman")
+                                .attr("class", "bar-label")
                                 .attr('text-anchor', 'middle')
                                 .attr('x', barsLabels[key][i].x + (x.rangeBand() / (2 * data.length)))
                                 .attr('y', barsLabels[key][i].y - 5)
@@ -8058,7 +8058,7 @@ nv.models.multiBar = function() {
                 else {
                     for (var key in barsLabels) {
                         group.append('text').transition()
-                            .attr("class", "osman")
+                            .attr("class", "bar-label")
                             .attr('text-anchor', 'middle')
                             .attr('x', barsLabels[key].x + (x.rangeBand() / (2)))
                             .attr('y', barsLabels[key].y - 5)
